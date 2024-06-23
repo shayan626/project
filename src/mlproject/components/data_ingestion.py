@@ -18,7 +18,7 @@ url=os.getenv("MONGO_DB_URL")
 db=os.getenv("db_name")
 coll=os.getenv("collection_name")
  
-@dataclass
+@dataclass 
 class DataIngestionConfig:
     train_data_path:str=os.path.join('artifacts','train.csv')
     test_data_path:str=os.path.join('artifacts','test.csv')
@@ -46,7 +46,7 @@ class DataIngestion:
                 self.ingestion_config.test_data_path
 
 
-            )
+            ) 
 
         except Exception as e:
             raise CustomException(e, sys)
