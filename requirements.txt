@@ -8,3 +8,6 @@ dnspython==2.2.1
 database-connect==0.1.66
 pymongo==4.2.0
 python-dotenv==0.21.0
+seaborn
+catboost
+xgboost

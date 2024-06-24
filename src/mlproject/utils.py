@@ -10,8 +10,8 @@ import numpy as np
 # from sklearn.metrics import r2_score
 import pymysql
 
-# import pickle
-# import numpy as np 
+import pickle
+
 url=os.getenv("MONGO_DB_URL") 
 db=os.getenv("db_name")
 coll=os.getenv("collection_name")
@@ -40,17 +40,17 @@ def export_collection_as_dataframe(url,coll, db):
 
 
 
-# def save_object(file_path, obj):
-#     try:
-#         dir_path = os.path.dirname(file_path)
+def save_object(file_path, obj):
+    try:
+        dir_path = os.path.dirname(file_path)
 
-#         os.makedirs(dir_path, exist_ok=True)
+        os.makedirs(dir_path, exist_ok=True)
 
-#         with open(file_path, "wb") as file_obj:
-#             pickle.dump(obj, file_obj)
+        with open(file_path, "wb") as file_obj:
+            pickle.dump(obj, file_obj)
  
-#     except Exception as e:
-#         raise CustomException(e, sys)
+    except Exception as e:
+        raise CustomException(e, sys)
 
 # def evaluate_models(X_train, y_train,X_test,y_test,models,param):
 #     try:
