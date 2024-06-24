@@ -8,7 +8,7 @@ import numpy as np
 from sklearn.metrics import mean_squared_error,mean_absolute_error
 from catboost import CatBoostRegressor
 from sklearn.ensemble import (
-    AdaBoostRegressor,
+    AdaBoostRegressor, 
     GradientBoostingRegressor,
     RandomForestRegressor,
 )
@@ -27,7 +27,7 @@ from src.mlproject.utils import save_object,evaluate_models
 class ModelTrainerConfig:
     trained_model_file_path=os.path.join("artifacts","model.pkl")
 
-class ModelTrainer:
+class ModelTrainer: 
     def __init__(self):
         self.model_trainer_config=ModelTrainerConfig()
 
@@ -59,7 +59,7 @@ class ModelTrainer:
                 "Decision Tree": {
                     'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
                     # 'splitter':['best','random'],
-                    # 'max_features':['sqrt','log2'],
+                    # 'max_features':['sqrt','log2'], 
                 },
                 "Random Forest":{
                     # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
@@ -117,7 +117,7 @@ class ModelTrainer:
 
             best_params = params[actual_model]
 
-            mlflow.set_registry_uri("https://dagshub.com/krishnaik06/mlprojecthindi.mlflow")
+            mlflow.set_registry_uri("https://dagshub.com/shayan626/project.mlflow")
             tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
 
             # mlflow
